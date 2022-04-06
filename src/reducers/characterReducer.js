@@ -18,7 +18,17 @@ const DEFAULT_STATE = {
   enemies: [],
 };
 
-const characterReducer = (state = DEFAULT_STATE, action) => {
+const sortCharacters = (state) => {
+  let newState = {
+    characters: [ ...state.characters ],
+    players: state.characters.filter(char => char.type === 'player'),
+    enemies: state.characters.filter(char => char.type === 'enemy'),
+  };
+
+  return newState;
+};
+
+const characterReducer = (state = sortCharacters(DEFAULT_STATE), action) => {
   return state;
 };
 
