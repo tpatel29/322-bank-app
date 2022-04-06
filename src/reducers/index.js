@@ -1,5 +1,9 @@
 import { combineReducers } from 'redux';
 
-export default combineReducers({
+import characterReducer from './characterReducer';
+import turnReducer from './turnReducer';
 
+export default combineReducers({
+  characters: characterReducer,
+  turn: turnReducer,
 });
