@@ -4,10 +4,12 @@ import { connect } from 'react-redux';
 import TeamMember from './TeamMember';
 import AddPlayer from './AddPlayer';
 
+import { removeCharacter } from '../actions';
+
 class TeamList extends React.Component {
 
   onRemoveCharacter = (id) => {
-
+    this.props.removeCharacter(id);
   }
 
   render() {
@@ -43,4 +45,4 @@ const mapStateToProps = state => {
   };
 };
 
-export default connect(mapStateToProps)(TeamList);
+export default connect(mapStateToProps, { removeCharacter })(TeamList);
