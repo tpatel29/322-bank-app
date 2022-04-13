@@ -1,10 +1,32 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import InitiativeItem from './InitiativeItem';
+
 const InitiativeList = (props) => {
-  console.log(props);
+  const { characters } = props;
+
+  const characterList = characters
+    .sort((a, b) => {
+      return b.initiative - a.initiative;
+    })
+    .map((char, index) => {
+      return (
+        <InitiativeItem key={index}
+          name={char.name}
+          initiative={char.initiative}
+       />
+      );
+    });
+
   return (
-    <h2>Initiative List</h2>
+    <div className="card">
+      <div>{/* Turn Controls */}</div>
+
+      <ul className="list-group">
+        { characterList }
+      </ul>
+    </div>
   );
 }
 
