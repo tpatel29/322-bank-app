@@ -1,11 +1,29 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import TeamMember from './TeamMember';
+
 class TeamList extends React.Component {
   render() {
-    console.log(this.props[this.props.stateList]);
+    const { title } = this.props;
+
+    const characterArr = this.props[this.props.stateList];
+    const characterList = characterArr.map((character, index) => {
+      return (
+        <TeamMember
+          key={index}
+          index={index}
+          character={character}
+        />
+      );
+    });
     return (
-      <h2>Team List</h2>
+      <div className="card">
+        <h3>{title} List</h3>
+        <ul className="list-group">
+          { characterList }
+        </ul>
+      </div>
     );
   }
 }

@@ -3,7 +3,7 @@ import React from 'react';
 const TeamMember = (props) => {
   return (
     <li className='list-group-item'
-        key={props.key}>
+        key={props.index}>
       { props.character.name }
     </li>
   );
