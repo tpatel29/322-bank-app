@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 class TeamList extends React.Component {
   render() {
-    console.log(this.props);
+    console.log(this.props[this.props.stateList]);
     return (
       <h2>Team List</h2>
     );
