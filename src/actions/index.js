@@ -6,3 +6,12 @@ export const addCharacter = (name, initiative, type) => {
     }
   };
 };
+
+export const removeCharacter = (id) => {
+  return {
+    type: 'REMOVE_CHARACTER',
+    payload: {
+      id
+    },
+  };
+};
