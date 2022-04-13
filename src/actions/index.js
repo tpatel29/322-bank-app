@@ -1,8 +1,8 @@
-export const addCharacter = (name, initiative, characterType) => {
+export const addCharacter = (name, initiative, type) => {
   return {
     type: 'ADD_CHARACTER',
     payload: {
-      name, initiative, characterType
+      name, initiative, type
     }
   };
 };

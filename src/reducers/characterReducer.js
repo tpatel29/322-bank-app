@@ -29,7 +29,14 @@ const sortCharacters = (state) => {
 };
 
 const characterReducer = (state = sortCharacters(DEFAULT_STATE), action) => {
-  return state;
+  switch (action.type) {
+    case 'ADD_PLAYER':
+      const character
+      break;
+
+    default:
+      return state;
+  }
 };
 
 export default characterReducer;
