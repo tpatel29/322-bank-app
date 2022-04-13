@@ -5,6 +5,11 @@ import TeamMember from './TeamMember';
 import AddPlayer from './AddPlayer';
 
 class TeamList extends React.Component {
+
+  onRemoveCharacter = (id) => {
+
+  }
+
   render() {
     const { title, characterType } = this.props;
 
@@ -15,6 +20,7 @@ class TeamList extends React.Component {
           key={index}
           index={index}
           character={character}
+          removeCharacter={this.onRemoveCharacter}
         />
       );
     });
