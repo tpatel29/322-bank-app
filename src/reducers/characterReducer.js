@@ -31,8 +31,10 @@ const sortCharacters = (state) => {
 const characterReducer = (state = sortCharacters(DEFAULT_STATE), action) => {
   switch (action.type) {
     case 'ADD_PLAYER':
-      const character
-      break;
+      const character = action.payload;
+      character.id = generateID();
+      state.characters.push(character);
+      return sortCharacters(state);
 
     default:
       return state;
