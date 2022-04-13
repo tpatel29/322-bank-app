@@ -30,7 +30,7 @@ const sortCharacters = (state) => {
 
 const characterReducer = (state = sortCharacters(DEFAULT_STATE), action) => {
   switch (action.type) {
-    case 'ADD_PLAYER':
+    case 'ADD_CHARACTER':
       const character = action.payload;
       character.id = generateID();
       state.characters.push(character);

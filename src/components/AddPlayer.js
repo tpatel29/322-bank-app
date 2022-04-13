@@ -1,11 +1,19 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import { addCharacter } from '../actions';
 
 class AddPlayer extends React.Component {
 
   state = { name: '', initiative: '' }
 
   onFormSubmit = (event) => {
+    const { name, initiative } = this.state;
+    const { characterType } = this.props;
 
+    event.preventDefault();
+    this.props.addCharacter(name, initiative, characterType);
+    this.setState({ name: '', initiative: '' });
   }
 
   render() {
@@ -44,4 +52,4 @@ class AddPlayer extends React.Component {
   }
 }
 
-export default AddPlayer;
+export default connect(null, { addCharacter })(AddPlayer);
