@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 
 import InitiativeItem from './InitiativeItem';
 
+import { nextTurn, prevTurn } from '../actions';
+
 function isCurrentTurn (currentTurn, index) {
   return currentTurn === index;
 }
@@ -29,12 +31,14 @@ const InitiativeList = (props) => {
       <div className="d-flex justify-content-between align-items-center">
         <button
           type="button"
-          className="btn btn-primary">
+          className="btn btn-primary"
+          onClick={props.prevTurn}>
           Previous
         </button>
         <button
           type="button"
-          className="btn btn-primary">
+          className="btn btn-primary"
+          onClick={props.nextTurn}>
           Next
         </button>
       </div>
@@ -53,4 +57,4 @@ function mapStateToProps(state) {
   };
 }
 
-export default connect(mapStateToProps)(InitiativeList);
+export default connect(mapStateToProps, { prevTurn, nextTurn })(InitiativeList);
