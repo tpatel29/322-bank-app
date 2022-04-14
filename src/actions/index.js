@@ -15,3 +15,11 @@ export const removeCharacter = (id) => {
     },
   };
 };
+
+export const nextTurn = () => {
+  return { type: 'NEXT_TURN' };
+};
+
+export const prevTurn = () => {
+  return { type: 'PREV_TURN' };
+};
