@@ -200,7 +200,6 @@ const accountReducer = (state = sortAccounts(DEFAULT_STATE), action) => {
       const account = action.payload;
       account._id = generateID();
       state.accounts.push(account);
-
       return sortAccounts(state);
 
     case 'REMOVE_ACCOUNT':
@@ -241,7 +240,7 @@ const accountReducer = (state = sortAccounts(DEFAULT_STATE), action) => {
           return char._id != id123;
         }
         else {
-          char.balance = (parseFloat(char.balance)) + (parseFloat(amount123));
+          char.balance = (parseFloat(char.balance)) - (parseFloat(amount123));
                     let type = "withdraw";
                     let amount = (parseFloat(amount123));
                     let _id = (parseInt(amount123));
