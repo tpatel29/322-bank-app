@@ -1,22 +1,23 @@
 import React from 'react';
 
+import FormComp from "./FormComp";
 const InitiativeItem = (props) => {
-  const { name, initiative, isCurrentTurn } = props;
+  const { name, balance, id } = props;
+        const hrefLocation = "/accounts/" + id
+        return (
+            <div className="col-sm-6">
+                <div className="card ">
+                    <div className="card-body">
+                    <div><a href={hrefLocation}><h4>{ name  }</h4></a></div>
+                    <span className="">
+                    <p>{ balance }</p>
+                    </span>
+                        <FormComp acc_id={id}></FormComp>
+                    </div>
 
-  let classNames = 'list-group-item d-flex justify-content-between align-items-center';
-
-  if (isCurrentTurn) {
-    classNames = classNames.concat(' active');
-  }
-
-  return (
-    <li className={classNames}>
-      { name }
-      <span className="badge badge-primary badge-pull">
-        { initiative }
-      </span>
-    </li>
-  );
-};
+                </div>
+            </div>
+        );
+    };
 
 export default InitiativeItem;

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import InitiativeItem from './InitiativeItem';
 
-import { nextTurn, prevTurn } from '../actions';
+import { deposit, withdraw } from '../actions';
 
 function isCurrentTurn (currentTurn, index) {
   return currentTurn === index;
@@ -25,6 +25,8 @@ const InitiativeList = (props) => {
        />
       );
     });
+
+  if(!props) return <></>;
 
   return (
     <div className="card">
@@ -51,10 +53,11 @@ const InitiativeList = (props) => {
 }
 
 function mapStateToProps(state) {
+    console.log(state.characters);
   return {
     characters: state.characters.characters,
     currentTurn: state.turn.current,
   };
 }
 
-export default connect(mapStateToProps, { prevTurn, nextTurn })(InitiativeList);
+export default connect(mapStateToProps, { deposit, withdraw })(InitiativeList);
