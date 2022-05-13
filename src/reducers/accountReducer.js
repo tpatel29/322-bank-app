@@ -185,6 +185,7 @@ const DEFAULT_STATE  = {
 };
 
 const sortAccounts = (state) => {
+    console.log("The new ",state.accounts);
   let newState = {
     accounts: [...state.accounts],
     transactions: [...state.transactions],
@@ -194,13 +195,12 @@ const sortAccounts = (state) => {
 
 const accountReducer = (state = sortAccounts(DEFAULT_STATE), action) => {
 
-
   switch (action.type) {
     case 'ADD_ACCOUNT':
       const account = action.payload;
-      account._id = generateID();
+      account.balance = parseFloat(account.balance);
+      account._id = parseInt(generateID());
       state.accounts.push(account);
-
       return sortAccounts(state);
 
     case 'REMOVE_ACCOUNT':
@@ -241,7 +241,7 @@ const accountReducer = (state = sortAccounts(DEFAULT_STATE), action) => {
           return char._id != id123;
         }
         else {
-          char.balance = (parseFloat(char.balance)) + (parseFloat(amount123));
+          char.balance = (parseFloat(char.balance)) - (parseFloat(amount123));
                     let type = "withdraw";
                     let amount = (parseFloat(amount123));
                     let _id = (parseInt(amount123));

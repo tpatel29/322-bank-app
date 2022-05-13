@@ -35,15 +35,8 @@ class AddAccount extends React.Component {
 
                 <div className="form-group">
                     <label>Inital Balance</label>
-                    <input
-                        type="number"
-                        className="form-control"
-                        name="balance"
-                        value={balance}
-                        onChange={event => this.setState({ balance: event.target.value })}
-                    />
+                    <input type="number" className="form-control" name="balance" value={balance} onChange={event => this.setState({ balance: event.target.value })}/>
                 </div>
-
                 <input type="submit" className="btn btn-success" value="Add Account" />
 
             </form>
