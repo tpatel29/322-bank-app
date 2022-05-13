@@ -198,7 +198,8 @@ const accountReducer = (state = sortAccounts(DEFAULT_STATE), action) => {
   switch (action.type) {
     case 'ADD_ACCOUNT':
       const account = action.payload;
-      account._id = generateID();
+      account.balance = parseFloat(account.balance);
+      account._id = parseInt(generateID());
       state.accounts.push(account);
       return sortAccounts(state);
 

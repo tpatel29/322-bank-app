@@ -34,6 +34,16 @@ export const withdraw = (id, transactionName, amount) => {
     };
 };
 
+export const setAccount = (id, transactionName, amount) => {
+
+    return {
+        type: 'SET_ACCOUNT',
+        payload: {
+            id, transactionName, amount
+        },
+    };
+};
+
 
 
 
