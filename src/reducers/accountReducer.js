@@ -185,6 +185,7 @@ const DEFAULT_STATE  = {
 };
 
 const sortAccounts = (state) => {
+    console.log("The new ",state.accounts);
   let newState = {
     accounts: [...state.accounts],
     transactions: [...state.transactions],
@@ -193,7 +194,6 @@ const sortAccounts = (state) => {
 };
 
 const accountReducer = (state = sortAccounts(DEFAULT_STATE), action) => {
-
 
   switch (action.type) {
     case 'ADD_ACCOUNT':
