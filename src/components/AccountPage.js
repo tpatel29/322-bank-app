@@ -15,7 +15,6 @@ const HomePage = (props) => {
    const accountScreen = accounts.accounts.map((char) => {
         console.log(char._id == id);
         if(char._id == id){
-            console.log("hereeeee");
             return (
                     <div style={{width:"100%"}}>
                         <Scalar name={char.name} balance={char.balance} id={char._id}/>
