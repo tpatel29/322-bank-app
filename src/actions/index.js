@@ -23,6 +23,7 @@ export const deposit = (id, transactionName, amount) => {
         },
     };
 };
+
 export const withdraw = (id, transactionName, amount) => {
 
     return {
@@ -32,4 +33,8 @@ export const withdraw = (id, transactionName, amount) => {
         },
     };
 };
+
+
+
+
 
